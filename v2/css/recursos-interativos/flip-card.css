@@ -1,0 +1,166 @@
+.flip-card {
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 10px;
+    align-items: stretch; */
+    
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px 20px;
+}
+
+#uni .destaque.flip-card h3:has(+ p) {
+    margin-bottom: 1rem;
+}
+
+
+/* Card base */
+.flip-card-content {
+    perspective: 1000px;
+    width: 290px;
+    margin: auto;
+}
+
+.flip-inner {
+    position: relative;
+    height: 100%;
+    min-height: 290px;
+    height: auto;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flip-card-content.is-flipped .flip-inner {
+    transform: rotateX(180deg);
+}
+
+
+/* Frente e Verso */
+.flip-front {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+
+/* Frente (centralização vertical inteligente) */
+.flip-front {
+    background: linear-gradient(to right, #CE0058, #6A2C88);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 14px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* container COM scroll */
+.flip-front-title {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+}
+
+/* elemento que centraliza SOMENTE se couber */
+.flip-front-text {
+    margin: auto;
+    max-width: 100%;
+}
+
+.flip-front-text h3 {
+    margin: 0;
+    font-size: 1.15rem !important;
+    font-weight: bold;
+}
+
+
+
+/* Verso (scroll só se precisar) */
+.flip-back-wrapper {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #CE0058, #6A2C88);
+    padding: 3px;
+    /* espessura da borda */
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+    box-sizing: border-box;
+    border-radius: 14px;
+}
+
+.flip-back {
+    background: #E2E3E3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 10px;
+
+    /* Quando for imagem */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    border-radius: 12px;
+}
+
+
+
+
+/* Conteúdo do verso (scroll condicional) */
+.flip-content {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+
+    display: grid;
+
+    border-radius: 10px;
+}
+
+.flip-text {
+    margin: auto;
+    /* centraliza apenas se couber */
+    text-align: center;
+}
+
+
+
+/* Botão fixo no final */
+.flip-back-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    align-self: center;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    color: #ffffff;
+    text-shadow: 0px 0px 7px #000000;
+}
+.flip-back:has(.flip-card-video) .flip-back-btn {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    border-radius: 100%;
+}
+.flip-back:has(.flip-card-video) {
+    padding: 0;
+}
+.flip-card-video {
+    margin: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 0;
+}

@@ -1,0 +1,68 @@
+.sentence {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.drop-zone {
+    display: inline-block;
+    min-width: 120px;
+    min-height: 38px;
+    border: 2px dashed #999;
+    border-radius: 5px;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 30px;
+    color: #666;
+    margin: 0 5px;
+    background: #f9f9f9;
+}
+.words {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+.word {
+    background: #007bff;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: grab;
+    user-select: none;
+}
+.word.dragging {
+    opacity: 0.5;
+}
+.correct {
+    background: #d4edda !important;
+    border-color: #28a745 !important;
+}
+.incorrect {
+    background: #f8d7da !important;
+    border-color: #dc3545 !important;
+}
+button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.verify-btn {
+    background: #28a745;
+    color: #fff;
+}
+.verify-btn:hover {
+    background: #218838;
+}
+.reset-btn {
+    background: #dc3545;
+    color: #fff;
+}
+.reset-btn:hover {
+    background: #c82333;
+}
+.score {
+    font-size: 18px;
+    margin-top: 15px;
+}

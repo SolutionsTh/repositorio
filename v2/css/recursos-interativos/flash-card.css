@@ -1,0 +1,203 @@
+.flash-card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 10px;
+    align-items: stretch;
+}
+
+
+/* Card base */
+.flash-card-content {
+    perspective: 1000px;
+    width: 290px;
+    margin: auto;
+}
+
+.flash-inner {
+    position: relative;
+    height: 100%;
+    min-height: 290px;
+    height: auto;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flash-card-content.is-flashped .flash-inner {
+    transform: rotatey(-180deg);
+}
+
+
+/* Frente e Verso */
+.flash-front {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    border-radius: 27px;
+}
+
+
+/* Frente (centralização vertical inteligente) */
+.flash-front {
+    background: linear-gradient(to right, #CE0058, #6A2C88);
+   
+    color: #ffffff;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* container COM scroll */
+.flash-front-title {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    display: flex;
+}
+
+/* elemento que centraliza SOMENTE se couber */
+.flash-front-text {
+    margin: auto;
+    max-width: 100%;
+}
+
+.flash-front-text h3 {
+    margin: 0;
+    font-size: 1.15rem !important;
+    font-weight: bold;
+}
+
+
+
+/* Verso (scroll só se precisar) */
+.flash-back-wrapper {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, #CE0058, #6A2C88);
+    border-radius: 27px;
+   
+    padding: 3px;
+    /* espessura da borda */
+    backface-visibility: hidden;
+    transform: rotatey(-180deg);
+    box-sizing: border-box;
+}
+
+.flash-back {
+    background: #E2E3E3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 25px;
+
+    /* Quando for imagem */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+/* Conteúdo do verso (scroll condicional) */
+.flash-content {
+    flex: 1;
+    overflow-y: auto;
+    display: grid;
+    align-items: center;
+}
+#uni .destaque .flash-content p:last-of-type {
+    margin-bottom: 0;
+}
+
+.flash-text {
+    margin: auto;
+    /* centraliza apenas se couber */
+    text-align: center;
+}
+
+
+
+/* Botão fixo no final */
+.flash-back-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    align-self: center;
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    color: #ffffff;
+    text-shadow: 0px 0px 7px #000000;
+}
+.flash-back:has(.flash-card-video) .flash-back-btn {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+    border-radius: 100%;
+}
+.flash-back:has(.flash-card-video) {
+    padding: 0;
+}
+.flash-card-video {
+    margin: 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.flash-card {
+    display: flex;
+    justify-content: center;
+}
+
+.flash-card-content {
+    display: none;
+}
+
+.flash-card-content.active {
+    display: block;
+    background: linear-gradient(to right, #CE0058, #6A2C88);
+    box-shadow: -1px 16px 0px -10px #444444, 1px 16px 0px -10px #444444, 0px 31px 0px -20px #00000094;
+    border-radius: 27px;
+    
+}
+
+
+
+.flash-card-content.is-exiting .flash-inner {
+  transform: rotatey(-360deg);
+}
+
+
+
+.flash-card-content {
+    width: 600px;
+}
+
+.flash-inner {
+    min-height: 350px;
+}

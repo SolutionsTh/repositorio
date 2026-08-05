@@ -1,0 +1,46 @@
+.wd-tabs {
+  display: flex;
+  gap: 24px;
+  border-bottom: 2px solid #e5e5e5;
+  margin-bottom: 20px;
+}
+
+.wd-tab {
+  background: none;
+  border: none;
+  padding: 12px 0;
+  font-weight: 600;
+  cursor: pointer;
+  color: #ffffff;
+  position: relative;
+}
+
+.wd-tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 3px;
+  background: #0055a5; /* cor institucional */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.wd-tab.active {
+  color: #0055a5;
+}
+
+.wd-tab.active::after {
+  transform: scaleX(1);
+}
+
+.wd-tab-panel {
+  display: none;
+  padding: 16px 0;
+}
+
+.wd-tab-panel.active {
+  display: block;
+}

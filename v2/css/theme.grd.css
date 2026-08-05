@@ -1,0 +1,84 @@
+﻿/*	Template Theme Styles */
+
+/* UNIDADE */
+/* Nav */
+#uni.grd .top-bar .top-wrapper { background-color: #8E9794; }
+#uni.grd .top-bar .top-wrapper .dropdown-content { background-color: #8E9794; }
+#uni.grd .nav-off-canvas { background-color: #8E9794; }
+/* Cover */
+#uni.grd #cover:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.6;
+	z-index: 0;
+
+	/*background: rgb(0, 79, 159);
+	background: -moz-linear-gradient(top,
+		rgba(0, 79, 159, 1) 0%,
+		rgba(0, 0, 0, 1) 100%);
+	background: -webkit-linear-gradient(top,
+		rgba(0, 79, 159, 1) 0%,
+		rgba(0, 0, 0, 1) 100%);
+	background: linear-gradient(to bottom,
+		rgba(0, 79, 159, 1) 0%,
+		rgba(0, 0, 0, 1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#004F9F', endColorstr='#000000', GradientType=0);*/
+}
+#uni.grd .cover-overlay { background-image: url(../img/cover-overlay.png);}
+
+#uni.grd #main-content.bg-content {
+	background: url(../img/_base/bg-padrao.jpg) center center no-repeat fixed white;
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+/* Buttons Colors */
+#uni.grd .btn,
+#uni.grd .btn-large,
+#uni.grd .btn-small,
+#uni.grd .btn-floating,
+#uni.grd .btn-flat {
+	color: #FFFFFF;
+	background-color: #22b6d1!important;
+	
+}
+#uni.grd .btn:hover,
+#uni.grd .btn-large:hover,
+#uni.grd .btn-small:hover,
+#uni.grd .btn:focus,
+#uni.grd .btn-large:focus,
+#uni.grd .btn-small:focus,
+#uni.grd .btn-floating:focus {
+	background-color: #2292D1!important;
+	box-shadow: none;
+}
+
+/*Botão Menu*/
+#uni.grd .btn-floating
+{
+    box-shadow: none!important;
+	background-color: #22b6d1!important;
+}
+
+#uni.grd .btn-floating:hover
+{
+    box-shadow: none!important;
+	background-color: #2292D1!important;
+}
+
+blockquote {border-left: 1px solid #D31C5B !important;}
+
+.bx-content {border-color: #8E9794 !important;}
+
+
+
+
+
+
+
